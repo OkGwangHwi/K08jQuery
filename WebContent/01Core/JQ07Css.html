@@ -20,19 +20,26 @@
                 엘리먼트선택.css({"속성1":"값1",....반복})
         */
         $('div').each(function(index){
-            $(this).css({'width':'500px','height':'200px'
-                ,'border':'solid red 2px'});
+            $(this).css({'width':'500px','height':'200px','border':'solid red 2px'});
         });
 
+        /*
+            css("속성","값") => 해당 속성에 값을 부여한다.
+            css("속성") => 해당 속성값을 가져온다.
+        */
         $('button').click(function(){
+            //article1 엘리먼트에 설정된 폰트크기를 가져와서 숫자로 변경
             var size = 
                 parseInt($("#article1").css("fontSize"));
+
+            //버튼의 text를 가져와서 버튼을 확인한다.
             if($(this).text()=="기사늘리기"){
                 size += 2;
             }
             else{
                 size -= 2;
             }
+            //위에서 계산된 값으로 폰트크기 지정함.
             $('div').css("fontSize",size+"px");
         });
     });
